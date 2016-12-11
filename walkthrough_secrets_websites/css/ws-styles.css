@@ -1,0 +1,58 @@
+*{
+  box-sizing: border-box;
+}
+
+/* Logo Text */
+h1{
+  text-align: center;
+}
+
+/* Header */
+#nav-list {
+  list-style-type: none;
+  text-align: center;
+}
+
+#nav-list li{
+  display: inline;
+  padding: 0 2%;
+}
+
+#nav-list a:link{
+  text-decoration: none;
+  background-color: #CCE3EB;
+  padding: 0.5em;
+  display: inline-block;
+}
+
+/* Main */
+
+#container{
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+main img{
+  max-width: 40%;
+  padding: 5%;
+  float: left;
+}
+
+/* Footer */
+
+#developer-info{
+  background-color: #000;
+  list-style-type: none;
+  text-align: center;
+  clear: both;
+}
+
+#developer-info li{
+  display: inline;
+  padding: 0 2%;
+}
+
+#developer-info a:link{
+  color: #FFF;
+  text-decoration: none;
+}
