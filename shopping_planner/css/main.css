@@ -1,0 +1,13 @@
+.main-content{
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.main-content:nth-child(4){
+    clear: left;
+}
+
+.logo{
+    margin-bottom: 1.5em;
+    vertical-align: baseline;
+}
