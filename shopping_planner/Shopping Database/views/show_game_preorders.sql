@@ -1,5 +1,7 @@
 USE Shopping;
 
+CREATE OR REPLACE VIEW game_preorders AS
+
     SELECT  Game.name AS 'Game', 
             Preorder_Bonus.name AS 'Preorder Bonus' 
             rating AS 'Rating', 

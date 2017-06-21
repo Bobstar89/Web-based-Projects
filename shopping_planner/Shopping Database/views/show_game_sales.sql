@@ -1,5 +1,7 @@
 USE Shopping;
 
+CREATE OR REPLACE VIEW game_sales AS
+
     SELECT  Game.name AS 'Game', 
             Store.name AS 'Store', 
             Platform.name AS 'Platform', 

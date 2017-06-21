@@ -6,6 +6,10 @@
         if(!$command)
             
             die(mysqli_error($connection));
+        
+        else
+         
+            return $command;
             
     }
    
@@ -24,9 +28,7 @@
             
                  "GROUP BY {$itemType}.name, {$itemType}_Store.name ORDER BY price LIMIT 10";
         
-        $items = mysqli_query($connection, $query);
-            
-        commandCheck($items);
+        $items = commandCheck( mysqli_query($connection, $query) );
         
         return $items;
     }
@@ -50,7 +52,72 @@
         }
     }
 
-    function displayAllItems($itemType){
-        $query = 'SELECT ';
+    function fetchButtons($itemList, $table)
+    {
+        global $connection;
+        
+        $listType = ucfirst($itemList);
+        
+        $query = "SELECT `Button Label` FROM All_Button_Mapping WHERE `Item Type` = '{$listType}'";
+        
+        $selectAllButtons = commandCheck( mysqli_query($connection, $query) );
+        
+        while( $row = mysqli_fetch_assoc($selectAllButtons) )
+        {
+            $tableReferredTo = strtolower($row['Button Label']);
+            $tableReferredTo = str_replace(' ', '_', $tableReferredTo);
+            
+            echo "<a class='list-button' href='list.php?table={$tableReferredTo}&list-type={$itemList}'>" . $row['Button Label'] . "</a>";
+        }
+    }
+
+    function fetchItemAttributes($table)
+    {
+        global $connection;
+        
+        $query = "SHOW COLUMNS FROM `{$table}`";
+        
+        return commandCheck( mysqli_query($connection, $query) );
+    }
+
+    function retrieveItems($table)
+    {
+        global $connection;
+        
+        $query = "SELECT * FROM $table";
+
+        return commandCheck( mysqli_query($connection, $query) );
+    }
+
+    function displayItems($table)
+        
+    {   
+        $itemAttributes = fetchItemAttributes($table);
+        $itemDetails = retrieveItems($table);
+        
+        echo "<table class='table'>" .
+                 "<thead>";
+        while($itemAttribute = mysqli_fetch_assoc($itemAttributes))
+        {
+            echo     '<th>' . $itemAttribute['Field'] . '</th>';
+        }
+        
+        echo     "</thead>" .
+                 "<tbody>";
+            
+            while($itemInfo = mysqli_fetch_assoc($itemDetails))
+            {
+                echo '<tr>';
+                
+                foreach($itemAttributes as $attribute)
+                    
+                     echo '<td>' . nl2br( $itemInfo[ $attribute['Field'] ] ) . '</td>';
+                
+                echo '</tr>';
+            }
+            
+        echo    "</tbody>" . 
+            "</table>";
+            
     }
 ?>

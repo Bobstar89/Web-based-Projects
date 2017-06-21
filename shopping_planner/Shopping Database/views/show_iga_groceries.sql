@@ -1,7 +1,8 @@
 USE Shopping;
 
-    SELECT  Grocery.name, AS 'Grocery Name' 
-            Grocery_Store.name AS 'Store Name', 
+CREATE OR REPLACE VIEW iga_groceries AS
+
+    SELECT  Grocery.name AS 'Item', 
             regular_price AS 'Price', 
             weight AS 'Weight', 
             Recipe_Item.quantity AS 'Quantity'

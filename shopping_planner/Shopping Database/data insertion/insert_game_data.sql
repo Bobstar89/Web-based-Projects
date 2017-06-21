@@ -1,6 +1,5 @@
 USE Shopping;
 
--- Games --
   DELETE FROM Store_Preorder;
   DELETE FROM Game_Sale;
   DELETE FROM Preorder_Bonus;
@@ -37,7 +36,8 @@ USE Shopping;
         ('Ensemble Studios', 'Age of Empires II HD', NULL),
         ('Psyonix', 'Rocket League', 7),
         ('Distaster Cake', 'Soul Saga', 8),
-        ('Obsidian Entertainment', 'South Park: The Stick of Truth', 6);
+        ('Obsidian Entertainment', 'South Park: The Stick of Truth', 6),
+        ('Bandai Namco', 'Digimon World', 7);
 
   INSERT INTO Platform(name)
   VALUES ('Playstation 4'),
@@ -68,7 +68,8 @@ USE Shopping;
          (9, 11),
          (10, 11),
          (11, 11),
-         (12, 11);
+         (12, 11),
+         (13, 1;
 
   INSERT INTO Game_Store(name)
   VALUES ('EB Games'), ('JB Hi-Fi'), ('Steam'),
@@ -79,9 +80,10 @@ USE Shopping;
   VALUES('Steelbook'), ('DLC'), ('Map'), ('Figurine');
 
   INSERT INTO Store_Preorder(store_id, game_id, platform_id, preorder_bonus_id, sale_price)
-  VALUES (1, 3, 1, 1, 99.95);
+  VALUES (1, 3,  1, 1, 99.95),
+         (1, 13, 1, NULL, 89.95  );
 
-  INSERT INTO Game_Sale(store_id, game_id, platform_id, description, sale_price)
+  INSERT INTO Game_Sale(store_id, item_id, platform_id, description, regular_price)
   VALUES (2, 3, 1, 'Standard', 99.00),
          (1, 6, 11, 'Standard', 39.95),
          (3, 6, 11, 'Standard', 20.25),

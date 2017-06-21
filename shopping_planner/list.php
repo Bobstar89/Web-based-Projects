@@ -2,10 +2,13 @@
     include('includes/header.php'); 
     include('includes/nav.php'); 
 
-    if(isset($_GET['list-type'])){
+    if(isset($_GET['table'])){
+        $table = $_GET['table'];
+    }
+
+    if(isset($_GET['list-type']))
+    {
         $listType = $_GET['list-type'];
-        
-        
     }
 ?>
     <!-- Page Content -->
@@ -29,42 +32,25 @@
         <!-- Content Row -->
         <div class="row">
             <div class="col-md-2">
-                <button class='sort-type'>Test</button>
-                <button class='sort-type'>Test</button>
-                <button class='sort-type'>Test</button>
+                <?php 
+                    if(isset($listType))
+                        
+                        fetchButtons($listType, $table);
+                    else
+                        
+                        header('index.php');
+                ?>
             </div>
             <div class="col-md-10">
             <table class='table'>
-                <thead>
-                    <th>Game</th>
-                    <th>Genre</th>
-                    <th>Sub-Genres</th>
-                    <th>Feature</th>
-                    <th>Theme</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Kingdom Hearts HD 1.5 Remix</td>
-                        <td>Quick-time Events
-Collection
-World-based Progression
-Arcade shooting minigame - In KH1
-Card deck management - As seen in KH: Chain of Memories
-Story-driven
-World-based
-Multiple difficulty settings</td>
-                       <td>Friendship
-Light and Dark
-Japanese
-Romance
-Disney
-Final Fantasy
-Save the world</td>
-                       <td></td>
-                       <td></td>
-                       <td></td>
-                    </tr>
-                </tbody>
+                <?php
+                    if(isset($table))
+                        
+                        displayitems($table);
+                    else
+                        
+                        header('index.php');
+                ?>
             </table>
             <!-- /.col-md-12 -->
         </div>

@@ -1,6 +1,5 @@
 USE Shopping;
 
--- Groceries --
   DELETE FROM Grocery_Sale;
   DELETE FROM Grocery_Special;
   DELETE FROM Grocery_Store;

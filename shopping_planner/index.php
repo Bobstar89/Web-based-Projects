@@ -77,7 +77,7 @@
                         <?php displayTopItems('Grocery', "AND Grocery_Store.name LIKE '%IGA%'") ?>
                     </tbody>
                 </table>
-                <a class="btn btn-default" href="list.php?item-type=Grocery&sort=all">More Groceries</a>
+                <a class="btn btn-default" href="list.php?table=all_groceries&list-type=groceries">More Groceries</a>
             </div>
             <!-- /.col-md-4 -->
             <div class="col-md-4 main-content">
@@ -92,7 +92,7 @@
                         <?php displayTopItems('Game', '') ?>
                     </tbody>
                 </table>
-                <a class="btn btn-default" href="list.php?item-type=Game&sort=all">More Games</a>
+                <a class="btn btn-default" href="list.php?table=all_games&list-type=games">More Games</a>
             </div>
             <!-- /.col-md-4 -->
             <div class="col-md-4 main-content">
