@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #f4f4f4;
+}
+
 /* Logo Text */
 h1{
   text-align: center;
@@ -49,6 +53,7 @@ nav {
   border: #cce6ff 3px solid;
   border-radius: 5px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 #nav-buttons a:link{
@@ -68,35 +73,107 @@ nav {
 #container{
   max-width: 50%;
   margin: 0 auto;
+  background-color: white;
 }
 
-main img{
-  max-width: 40%;
-  padding: 5%;
-  float: left;
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.game-feature{
+  width: 32%;
+  padding-left: 2%;
+  padding-top: 1%;
+  padding-bottom: 0.5%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+  background-color: #824c0b;;
+  /* border: 20px inset #683E0A; */
+  border-top: 10px solid #683E0A;
+  border-bottom: 10px solid #683e0a;
+  border-left: 10px solid #4f2f07;
+  border-right: 10px solid #4f2f07;
+
+}
+
+.game-feature:nth-child(1)
+{
+  margin-left: 2%;
+  padding-left: 0;
+}
+
+.game-feature:nth-child(3)
+{
+  padding-left: 0;
+  margin-right: 2%;
+
+}
+.game-feature img{
+  flex-grow: .25;
+  padding-left: 7%;
+  padding-right: 2%;
+  width: 200px;
+  height: 200px;
+  flex-basis: 20%;
+  display: block;
+  margin: auto;
+  margin-top: 3%;
+}
+
+.game-feature input[type='button']{
+  margin-left: 25px;
+  background-color: lightblue;
+  border-radius: 5px;
+}
+
+.content {
+  float: right;
+}
+.image:nth-child(2n)
+{
+  clear: left;
 }
 
 /* Footer */
 
-#developer-info{
+#website-info{
   background-color: #000;
   list-style-type: none;
   text-align: center;
   clear: both;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
-#developer-info li{
+#website-info li{
   display: inline;
   padding: 0 2%;
 }
 
-#developer-info a:link{
+#website-info a:link{
   color: #FFF;
   text-decoration: none;
+  cursor: pointer;
 }
 
-@media(max-width: 1024px){
+#website-info a:visited{
+  text-decoration: none;
+  color: white;
+}
+
+@media(max-width: 1440px){
   #container{
     max-width: 75%;
+  }
+
+  .game-feature{
+    max-width: 350px;
+  }
+
+  #website-info{
+    max-width: 75%;
+    margin: auto;
   }
 }
