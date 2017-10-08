@@ -32,7 +32,7 @@
         item_id INT NOT NULL,
         store_id INT NOT NULL,
         regular_price DECIMAL(4,2) NOT NULL,
-        weight VARCHAR(10) NOT NULL,
+        weight VARCHAR(10),
         quantity TINYINT NOT NULL,
 
         PRIMARY KEY(id, item_id, store_id),

@@ -37,7 +37,10 @@ USE Shopping;
          ('Mocha Kenya Coffee', 'Maccona', 'Energy'),
          ('Kangaroo Island Honey Iceblock', 'Connoisuer', 'Dessert'),
          ('360 Toothbrush', 'Colgate', 'Hygeine'),
-         ('Mint-strip Toothpaste', 'Colgate', 'Hygeine');
+         ('Mint-strip Toothpaste', 'Colgate', 'Hygeine'),
+         ('Restaurante Pizza', 'Dr. Oetker', 'Meal'),
+         ('Matcha Iceblock', 'Connoisuer', 'Dessert'),
+         ('Sugar', 'Bundaberg', 'Energy');
 
   INSERT INTO Grocery_Store(name)
   VALUES('IGA'), ('ALDI'), ('Woolworths'), ('Coles');
@@ -54,7 +57,7 @@ USE Shopping;
          (8,  2, '3.29' , '2L',   1),
          (9,  1, '6.16' ,  NULL,  1),
          (10, 1, '4.11' ,  NULL,  1),
-         (11, 1, '1.65' ,  NULL   6),
+         (11, 1, '1.65' ,  NULL,  6),
          (11, 4, '2.50' ,  NULL,  6),
          (12, 1, '3.99' , '375g', 1),
          (13, 2, '3.49' , '375g', 1),
