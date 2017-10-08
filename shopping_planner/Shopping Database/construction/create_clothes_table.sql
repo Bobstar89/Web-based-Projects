@@ -1,0 +1,10 @@
+USE Shopping;
+
+DROP TABLE IF EXISTS Shirt;
+
+CREATE TABLE Shirt(
+  id INT NOT NULL AUTO_INCREMENT,
+  brand VARCHAR(30) NOT NULL,
+
+  PRIMARY KEY(id)
+);
